@@ -22,7 +22,20 @@
 
 <p>Hello world! This is Penn [Dis]Connects.</p>
 
-
+<form action="/submit" method="POST" id="interest-form">
+  <div id="pledge">
+    My name is <input id="name-field" name="name" type="text"/>
+    and my email is <input id="email-field" name="email" type="email"/>.
+    I pledge to disconnect form tech and connect with friends on Saturday, April 20.
+  </div>
+  <div id="tell-me-more">
+    <input id="interested-box" name="is_interested" type="checkbox" value="1"/>
+    <label for="interested-box">I might be interesetd in leading a larger group.</label>
+  </div>
+  <div id="submit">
+    <input id="pledge-submit" type="submit" content="Pledge"/>
+  </div>
+</form>
 
 
 

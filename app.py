@@ -16,15 +16,18 @@ def home():
 def submit():
     if request.method == 'POST':
         try:
+            inter = 
+#            print inter
             data = {
                 'name': request.form['name'],
                 'email': request.form['email'],
-                'is_insterested': request.form['is_interested'],
+                'is_insterested': request.form.get('is_interested', False, type=bool)
                 }
         except KeyError:
             return jsonify(error='Invalid form submission',
                            data=request.form)
         else:
+            print data
             return jsonify(data=data)
     else:
         return redirect(url_for('home'))
