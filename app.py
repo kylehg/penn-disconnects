@@ -2,9 +2,14 @@
 Create the application.
 """
 import os
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, redirect, render_template, request, url_for
 
 app = Flask(__name__)
+
+
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 
 @app.route('/submit', methods=['GET', 'POST'])
@@ -22,7 +27,7 @@ def submit():
         else:
             return jsonify(data=data)
     else:
-        return 'Hello world!'
+        return redirect(url_for('home'))
 
 
 if __name__ == '__main__':
