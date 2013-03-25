@@ -1,41 +1,90 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html xmlns:fb="http://ogp.me/ns/fb#" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>
-    Penn [Dis]Connects :: Unplug from technology, connect with friends on April 20, 2013
-</title> <!-- TODO: Blurb -->
-<meta name="description" content=""> <!-- TODO -->
+<title>Penn [Dis]Connects: Connect with friends and disconnect from technology on April 20, 2013</title>
+    
+<meta name="description" content="A day to connect with friends and disconnect from technology on April 20, 2013">
 <meta name="viewport" content="width=device-width">
 
-<link rel="stylesheet" href="/static/css/normalize.css">
+<link rel="stylesheet" href="/static/css/reset.css">
 <link rel="stylesheet" href="/static/css/main.css">
+
+<!-- Google Web Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+
 </head>
 
 
 
 <body>
 
-<p>Hello world! This is Penn [Dis]Connects.</p>
+<div id="main">
+  <header id="header"><h1>
+      <img src="/static/img/logo.png" title="Penn [Dis]Connects"/>
+  </h1></header>
+  <section id="lead">
+    <h2 id="date">Saturday April 20</h2>
+    <p id="tagline">A day to connect with friends and disconnect from technology.</p>
+  </section>
+  <section id="info">
+    <h2>It&rsquo;s really simple:</h2>
+    <div id="steps">
+      <div class="step">
+        <h3>1</h3>
+        <p>Get together with a group of friends</p>
+      </div>
+      <div class="step">
+        <h3>2</h3>
+        <p>Pledge to turn off your phones and computer on Saturday, April 20th</p>
+      </div>
+      <div class="step">
+        <h3>3</h3>
+        <p>Spend the daywith your friends, technology-free</p>
+      </div>
+    </div><!--/steps-->
+  </section><!--/info-->
+  <section id="pledge">
+    <h2>The Pledge</h2>
+    <form action="/submit" method="POST" id="interest-form">
+      <p id="pledge-copy">
+        My name is <input id="name-field" name="name" type="text"/>
+        and my email is <input id="email-field" name="email" type="email"/>.
+        I commit to turn off my phone and computer on Saturday, April 20, and spending the time
+        fully present with a group of friends.
+      </p>
+      <div id="tell-me-more">
+        <input id="interested-box" name="is_interested" type="checkbox" value="1"/>
+        <label for="interested-box">I might be interesetd in leading a larger group.</label>
+      </div>
+      <div id="submit">
+        <input id="pledge-submit" type="submit" content="Pledge"/>
+      </div>
+    </form>
+  </section><!--/pledge-->
+  <section id="share">
+    <h2>Now tell your friends!</h2>
+    <div id="share-opts">
+      <div id="fb-opt">
+        <fb:like href="http://penndisconnects.com/"
+                 send="true"
+                 layout="button_count"
+                 width="450"
+                 show_faces="true"></fb:like>
+      </div>
+      <div id="twitter-opt">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-size="large"
+           data-text="Join me in pledging to connect with friends and disconnect from technology on 
+                      Sat April 20."
+           data-via="penndisconnects" data-hashtags="penndisconnects">
+          Tweet
+        </a>
+      </div>
+    </div><!--/share-opts-->
+  </section><!--/share-->
 
-<form action="/submit" method="POST" id="interest-form">
-  <div id="pledge">
-    My name is <input id="name-field" name="name" type="text"/>
-    and my email is <input id="email-field" name="email" type="email"/>.
-    I pledge to disconnect form tech and connect with friends on Saturday, April 20.
-  </div>
-  <div id="tell-me-more">
-    <input id="interested-box" name="is_interested" type="checkbox" value="1"/>
-    <label for="interested-box">I might be interesetd in leading a larger group.</label>
-  </div>
-  <div id="submit">
-    <input id="pledge-submit" type="submit" content="Pledge"/>
-  </div>
-</form>
+
 
 
 
@@ -46,19 +95,31 @@
 </script>
 <script src="/static/js/main.js"></script>
 
+
+
+<!-- FB SDK: Possibly change app ID -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=284669488212521";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Twitter button -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 <!-- Google Analytics -->
 <script type="text/javascript">
-
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-39570716-1']);
   _gaq.push(['_trackPageview']);
-
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script>
 
 </body>

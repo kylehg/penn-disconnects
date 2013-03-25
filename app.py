@@ -16,8 +16,6 @@ def home():
 def submit():
     if request.method == 'POST':
         try:
-            inter = 
-#            print inter
             data = {
                 'name': request.form['name'],
                 'email': request.form['email'],

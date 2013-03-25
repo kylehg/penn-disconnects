@@ -1,0 +1,23 @@
+@import url(fonts.css);
+body {
+  font-family: Futura, "Open Sans", Helvetica, Arial, sans-serif; }
+
+#header {
+  text-align: center;
+  padding: 20px 30px;
+  background-color: #b0bcc1; }
+
+#lead {
+  padding: 20px; }
+  #lead h2, #lead p {
+    width: 60%;
+    margin: 0 auto; }
+  #lead h2 {
+    border-top: 2px dotted #32505a;
+    padding: 15px 5px 10px;
+    font-family: "Duke Regular", Helvetica, Arial, sans-serif;
+    font-size: 36px;
+    text-transform: uppercase; }
+  #lead p {
+    border-bottom: 2px dotted #32505a;
+    padding: 10px 5px 15px; }
