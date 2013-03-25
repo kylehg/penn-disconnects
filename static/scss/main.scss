@@ -1,26 +1,58 @@
 @import "fonts.css";
 
 $header-font-family: "Duke Regular", Helvetica, Arial, sans-serif;
-$blue: rgb(50, 80, 90);
-$logo-gray: rgb(176, 188, 193);
-$semi-opaque: rgba(0, 0, 0, 0.2);
-$dot-border: 2px dotted $blue;
+$logo-gray: rgb(230, 235, 239);
+$semi-opaque: rgba(255, 255, 255, 0.8);
+$pinkish: rgb(203, 108, 140);
+$tealey: rgb(50, 80, 90);
+$tealey-opaque: rgba(50, 80, 90, 0.8);
+$yellow: rgb(239, 200, 93);
+$beige: rgb(245, 239, 218);
+$dot-border: 3px dotted $tealey;
+
+@mixin transition {
+  -webkit-transition: all 0.3s ease-out; 
+     -moz-transition: all 0.3s ease-out; 
+       -o-transition: all 0.3s ease-out; 
+          transition: all 0.3s ease-out; 
+}
 
 body {
-  font-family: Futura, "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 #header {
-  text-align: center;
-  padding: 20px 30px;
+  padding: 50px 30px;
   background-color: $logo-gray;
+
+  img {
+    width: 600px;
+  }
 }
 
-#lead {
-  padding: 20px;
+#info {
+  background: white url('/static/img/college-green.jpg') no-repeat center top;
+
+  & > div {
+    padding: 50px 20px;
+    
+  }
+}
+
+#date-box {
+  background-color: $semi-opaque;
 
   h2, p {
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
   }
 
@@ -28,11 +60,190 @@ body {
     border-top: $dot-border;
     padding: 15px 5px 10px;
     font-family: $header-font-family;
-    font-size: 36px;
-    text-transform: uppercase;
+    font-size: 72px;
+    color: $pinkish;
   }
   p {
     border-bottom: $dot-border;
     padding: 10px 5px 15px;
+    font-size: 24px;
+    color: $tealey;
+    line-height: 1.5;
+    font-weight: 200;
+
+    span {
+      display: block;
+    }
+  }
+}
+
+#steps-box {
+  background-color: $tealey-opaque;
+  color: #fff;
+
+  h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  #steps {
+    overflow: hidden;
+
+    .step {
+      float: left;
+      width: 33.33%;
+
+      h3 {
+        font: 80px $header-font-family;
+        background: transparent url("/static/img/circle.png") center 110% no-repeat;
+        background-size: 50px;
+        line-height: 1.8;
+        background-position: 50% 80%;
+      }
+      
+      p {
+        margin-top: -20px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+#pledge {
+  background-color: $yellow;
+  color: $tealey;
+  padding: 50px 10px;
+
+  #side1 {
+    text-align: left;
+  }
+
+  #side2 {
+    text-align: center;
+    display: none;
+
+    & > p {
+      margin-top: 15px;
+    }
+  }
+
+  #tell-me-more {
+    width: 80%;
+    margin: auto;
+    p {
+      font-size: 18px;
+    }
+
+    p a {
+      display: block;
+      text-align: left;
+      padding-left: 50px;
+      background: transparent url('/static/img/coffeeCup.png')  no-repeat 0% 5px;
+      background-size: 40px 40px;
+      line-height: 1.3;
+      
+      &:hover span {
+        border-bottom: 1px dotted $tealey;
+      }
+    }
+
+    .post-submit {
+      display: none;
+    }
+  }
+
+  form {
+    background-color: $beige;
+    border-radius: 20px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 7%;
+
+    h2 {
+      font: 80px/1 $header-font-family;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 24px;
+      text-transform: none;
+    }
+
+    input[type="text"], input[type="email"] {
+      background-color: transparent;
+      border: $dot-border;
+      border-width: 0 0 1px 0;
+      font-size: 20px;
+      line-height: inherit;
+      padding: 0 10px;
+      color: inherit;
+      
+      &:focus {
+        outline: none;
+      }
+    }
+
+    #name-field {
+      width: 12em;
+    }
+
+    #email-field {
+      width: 14em;
+    }
+
+    #submit {
+      text-align: right;
+
+      input[type="submit"] {
+        background-color: lighten($tealey, 40%);
+        border: none;
+        border-radius: 5px;
+        font-size: 24px;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: bold;
+        cursor: not-allowed;
+        @include transition;
+        
+        &.ready {
+          cursor: pointer;
+          background-color: $tealey;
+        }
+      }
+    }
+
+  }
+}
+
+
+#footer {
+  background-color: $tealey;
+  color: #fff;
+  text-align: center;
+  width: 80%;
+  padding: 10px 10%;
+  font-size: 18px;
+
+  div {
+    display: inline;
+    padding-right: 20px;
+  }
+
+  p {
+    margin-top: 50px;
+    font-size: 12px;
+    color: #ddd;
+    a {
+      
+    }
+    a:hover {
+      border-bottom: 1px dotted #fff;
+    }
+  }
+
+  #twitter-opt {
+    position: relative;
+    top: 5px;
   }
 }

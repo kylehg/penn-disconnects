@@ -24,66 +24,86 @@
   <header id="header"><h1>
       <img src="/static/img/logo.png" title="Penn [Dis]Connects"/>
   </h1></header>
-  <section id="lead">
-    <h2 id="date">Saturday April 20</h2>
-    <p id="tagline">A day to connect with friends and disconnect from technology.</p>
-  </section>
+
   <section id="info">
-    <h2>It&rsquo;s really simple:</h2>
-    <div id="steps">
-      <div class="step">
-        <h3>1</h3>
-        <p>Get together with a group of friends</p>
-      </div>
-      <div class="step">
-        <h3>2</h3>
-        <p>Pledge to turn off your phones and computer on Saturday, April 20th</p>
-      </div>
-      <div class="step">
-        <h3>3</h3>
-        <p>Spend the daywith your friends, technology-free</p>
-      </div>
-    </div><!--/steps-->
-  </section><!--/info-->
-  <section id="pledge">
-    <h2>The Pledge</h2>
-    <form action="/submit" method="POST" id="interest-form">
-      <p id="pledge-copy">
-        My name is <input id="name-field" name="name" type="text"/>
-        and my email is <input id="email-field" name="email" type="email"/>.
-        I commit to turn off my phone and computer on Saturday, April 20, and spending the time
-        fully present with a group of friends.
+    <div id="date-box">
+      <h2 id="date">Saturday April&nbsp;20</h2>
+      <p id="tagline">
+        <span>A day to connect with friends and </span>
+        <span>disconnect from technology.</span>
       </p>
-      <div id="tell-me-more">
-        <input id="interested-box" name="is_interested" type="checkbox" value="1"/>
-        <label for="interested-box">I might be interesetd in leading a larger group.</label>
+    </div><!--/info-->
+
+    <div id="steps-box">
+      <h2>It&rsquo;s really simple:</h2>
+      <div id="steps">
+        <div class="step">
+          <h3>1</h3>
+          <p>Get together with a group of friends</p>
+        </div>
+        <div class="step">
+          <h3>2</h3>
+          <p>Pledge to turn off your phones and computer on Saturday, April 20th</p>
+        </div>
+        <div class="step">
+          <h3>3</h3>
+          <p>Spend the daywith your friends, technology-free</p>
+        </div>
+      </div><!--/steps-->
+    </div><!--/steps-box-->
+  </section><!--/info-->
+
+  <section id="pledge">
+    <form action="/submit" method="POST" id="interest-form">
+      <div id="side1">
+        <h2>The Pledge</h2>
+        <p id="pledge-copy">
+          My name is <input id="name-field" name="name" required type="text"/>
+          and my email is <input id="email-field" name="email" required type="email"/>.
+          I commit to turn off my phone and computer on Saturday, April 20th, and spend the time
+          fully present with a group of friends.
+        </p>
+        <div id="submit">
+          <input id="pledge-submit" type="submit" value="Pledge"/>
+        </div>
       </div>
-      <div id="submit">
-        <input id="pledge-submit" type="submit" content="Pledge"/>
-      </div>
+      <div id="side2">
+        <h2>Great! We&rsquo;re really excited</h2>
+        <div id="tell-me-more">
+          <p>
+            <a href="#"><span>
+                I&rsquo;m excited too! I might want to lead a larger group or be more involved.
+                Let&rsquo;s get coffee (our treat)!
+            </span></a>
+            <span class="post-submit">Wonderful news! We&rsquo;ll be in touch shortly.</span>
+          </p>
+        </div><!--/tell-me-more-->
+        <p><strong>Now shout it from the rooftops!</strong></p>
+      </div><!--/side2-->
     </form>
   </section><!--/pledge-->
-  <section id="share">
-    <h2>Now tell your friends!</h2>
-    <div id="share-opts">
-      <div id="fb-opt">
-        <fb:like href="http://penndisconnects.com/"
-                 send="true"
-                 layout="button_count"
-                 width="450"
-                 show_faces="true"></fb:like>
+  <footer id="footer">
+    <div>Spread the word:</div>
+    <div id="fb-opt">
+      <fb:like href="http://penndisconnects.com/"
+               send="true"
+               layout="button_count"
+               width="450"
+               show_faces="true"></fb:like>
+    </div>
+    <div id="twitter-opt">
+      <div>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-size="small"
+         data-text="Join me in pledging to connect with friends and disconnect from technology on 
+                    Sat April 20."
+         data-via="penndisconnects" data-hashtags="penndisconnects">
+        Tweet
+      </a>
       </div>
-      <div id="twitter-opt">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-size="large"
-           data-text="Join me in pledging to connect with friends and disconnect from technology on 
-                      Sat April 20."
-           data-via="penndisconnects" data-hashtags="penndisconnects">
-          Tweet
-        </a>
-      </div>
-    </div><!--/share-opts-->
-  </section><!--/share-->
-
+    </div>
+    <p>An <a href="https://twitter.com/aarowilso">@aarowilso</a>, <a href="https://twitter.com/elankiderman">@elankiderman</a>, <a href="https://twitter.com/joycekim77">@joycekim77</a>, <a href="https://twitter.com/KelseyMatevish">@kelseymatevish</a>, and <a href="https://twitter.com/kylehardgrave">@kylehardgrave</a> production.</p>
+  </footer><!--/footer-->
+</div><!--/main-->
 
 
 
