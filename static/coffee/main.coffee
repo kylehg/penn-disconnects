@@ -15,7 +15,12 @@ pdc.init = ->
 pdc.interestSubmit = (e) ->
   e.preventDefault()
   $('#tell-me-more a').fadeOut ->
-    $('#tell-me-more .post-submit').fadeIn()
+    $('#tell-me-more .post-submit').fadeIn ->
+      data =
+        name: window.localStorage['name']
+        email: window.localStorage['email']
+        is_interested: true
+      $.post '/submit', data, 'json'
 
 
 

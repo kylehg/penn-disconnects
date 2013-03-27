@@ -15,7 +15,15 @@
   pdc.interestSubmit = function(e) {
     e.preventDefault();
     return $('#tell-me-more a').fadeOut(function() {
-      return $('#tell-me-more .post-submit').fadeIn();
+      return $('#tell-me-more .post-submit').fadeIn(function() {
+        var data;
+        data = {
+          name: window.localStorage['name'],
+          email: window.localStorage['email'],
+          is_interested: true
+        };
+        return $.post('/submit', data, 'json');
+      });
     });
   };
 
