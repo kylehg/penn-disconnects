@@ -13,17 +13,16 @@
   };
 
   pdc.interestSubmit = function(e) {
+    var data;
     e.preventDefault();
+    data = {
+      name: window.localStorage['name'],
+      email: window.localStorage['email'],
+      is_interested: true
+    };
+    $.post('/submit', data, 'json');
     return $('#tell-me-more a').fadeOut(function() {
-      return $('#tell-me-more .post-submit').fadeIn(function() {
-        var data;
-        data = {
-          name: window.localStorage['name'],
-          email: window.localStorage['email'],
-          is_interested: true
-        };
-        return $.post('/submit', data, 'json');
-      });
+      return $('#tell-me-more .post-submit').fadeIn();
     });
   };
 
