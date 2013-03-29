@@ -10,9 +10,7 @@ from pymongo import Connection
 from sendgrid import Message, Sendgrid
 
 app = Flask(__name__)
-EMAIL = 'penndisconnects@gmail.com'
 NAME = 'Penn [Dis]Connects'
-BYLINE = (EMAIL, NAME)
 MONGO_URL = os.environ.get('MONGOHQ_URL')
 SENDGRID_UN = os.environ.get('SENDGRID_USERNAME')
 SENDGRID_PW = os.environ.get('SENDGRID_PASSWORD')
@@ -20,10 +18,16 @@ SENDGRID_PW = os.environ.get('SENDGRID_PASSWORD')
 if MONGO_URL:
     connection = Connection(MONGO_URL) # Get a connection
     db = connection[urlparse(MONGO_URL).path[1:]] # Get the database
+    DEBUG = False
+    EMAIL = 'kylehardgrave+pdc@gmail.com'
 else:
     # Not on an app with the MongoHQ add-on, do some localhost action
     connection = Connection('localhost', 27017)
     db = connection['disconnects']
+    DEBUG = True
+    EMAIL = 'penndisconnects@gmail.com'
+
+BYLINE = (EMAIL, NAME)
 
 if not (SENDGRID_UN and SENDGRID_PW):
     from config import SENDGRID_UN, SENDGRID_PW
@@ -58,8 +62,13 @@ def submit():
         else:
             print 'Inserting new record'
             db.signups.insert(data)
-
+        print 'Data2: ', data
         send_emails(data)
+        data = {
+            'name': data['name'],
+            'email': data['email'],
+            'is_interested': data['is_interested']
+            }
         return jsonify(data=data)
     else:
         return redirect(url_for('home'))
@@ -97,4 +106,4 @@ def dump():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=DEBUG)

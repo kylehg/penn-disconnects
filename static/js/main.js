@@ -9,7 +9,28 @@
     $('#interest-form').on('submit', pdc.formSubmit);
     $('#interest-form input').on('keyup', pdc.formCheck);
     $('#tell-me-more a').on('click', pdc.interestSubmit);
+    $('#more-info-box a').on('click', pdc.expandInfo);
     return pdc.formCheck();
+  };
+
+  pdc.expandInfo = function(e) {
+    var about, props;
+    e.preventDefault();
+    about = $('#about');
+    if (about.hasClass('on')) {
+      $(this).find('span').html('&#x25BC');
+      return about.slideUp(400, 'linear', function() {
+        return about.toggleClass('on');
+      });
+    } else {
+      $(this).find('span').html('&#x25B2;');
+      props = {
+        'height': '100%'
+      };
+      return about.slideDown(400, 'linear', function() {
+        return about.toggleClass('on');
+      });
+    }
   };
 
   pdc.interestSubmit = function(e) {

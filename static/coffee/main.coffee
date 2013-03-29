@@ -9,9 +9,27 @@ pdc.init = ->
   $('#interest-form').on 'submit', pdc.formSubmit
   $('#interest-form input').on 'keyup', pdc.formCheck
   $('#tell-me-more a').on 'click', pdc.interestSubmit
+  $('#more-info-box a').on 'click', pdc.expandInfo
   pdc.formCheck()
 
+pdc.expandInfo = (e) ->
+  e.preventDefault()
+  about = $('#about')
+  if about.hasClass('on')
+    $(this).find('span').html '&#x25BC'
+    about.slideUp(400, 'linear', ->
+      about.toggleClass('on')
+      )
+  else
+    $(this).find('span').html '&#x25B2;'
+    props =
+      'height': '100%'
+    about.slideDown(400, 'linear', ->
+      about.toggleClass('on')
+      )
 
+
+# Submit the added leadership interest
 pdc.interestSubmit = (e) ->
   e.preventDefault()
   data =

@@ -30,21 +30,30 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}
+
 #header {
   padding: 50px 30px;
   background-color: $logo-gray;
 
   img {
-    width: 600px;
+    max-width: 600px;
+    width: 70%;
   }
 }
 
 #info {
-  background: white url('/static/img/college-green.jpg') no-repeat center top;
+  background: url('/static/img/college-green.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
 
   & > div {
     padding: 50px 20px;
-    
   }
 }
 
@@ -80,6 +89,7 @@ a {
 #steps-box {
   background-color: $tealey-opaque;
   color: #fff;
+  padding-bottom: 10px !important;
 
   h2 {
     font-size: 30px;
@@ -91,7 +101,12 @@ a {
 
     .step {
       float: left;
-      width: 33.33%;
+      width: 30%;
+      margin-right: 3.33%;
+      
+      &:last-child {
+        margin-right: 0;
+      }
 
       h3 {
         font: 80px $header-font-family;
@@ -106,6 +121,46 @@ a {
         font-size: 20px;
       }
     }
+  }
+
+  #more-info-box {
+    margin-top: 30px;
+
+    a {
+      color: $yellow;
+    }
+  }
+}
+
+#about {
+/*  height: 0;*/
+  display: none;
+  background-color: beige;
+  position: relative;
+  -webkit-transition: none;
+
+/*  &.on div {
+    visibility: visible;
+  }*/
+
+  div {
+    height: 100%;
+    padding: 20px;
+    visibility: hidden;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  p {
+    margin-bottom: 1em;
+    font-size: 16px;
+    line-height: 1.4;
+    text-transform: none;
+    text-align: left;
+  }
+
+  a {
+    color: $tealey;
   }
 }
 
@@ -225,21 +280,19 @@ a {
   padding: 10px 10%;
   font-size: 18px;
 
-  div {
-    display: inline;
-    padding-right: 20px;
-  }
-
   p {
     margin-top: 50px;
     font-size: 12px;
     color: #ddd;
-    a {
-      
-    }
-    a:hover {
-      border-bottom: 1px dotted #fff;
-    }
+
+  }
+}
+
+#social {
+  div {
+    width: 200px;
+    text-align: center;
+    display: inline;
   }
 
   #twitter-opt {
@@ -247,3 +300,10 @@ a {
     top: 5px;
   }
 }
+
+/*
+@media all and (max-width: 600px) {
+  .step {
+    float: none;
+  }
+}*/
