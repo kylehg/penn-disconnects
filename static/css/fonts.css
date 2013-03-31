@@ -3,8 +3,8 @@
 /* Duke */
 @font-face {
   font-family: 'Duke Fill';
-  src: url('/static/font/duke/duke_fill-webfont.eot');
-  src: url('/static/font/duke/duke_fill-webfont.eot?#iefix') format('embedded-opentype'),
+  src: url('/static/font/duke/duke_fill-webfont.eot') format('eot'),
+     url('/static/font/duke/duke_fill-webfont.eot?#iefix') format('embedded-opentype'),
      url('/static/font/duke/duke_fill-webfont.woff') format('woff'),
      url('/static/font/duke/duke_fill-webfont.ttf') format('truetype'),
      url('/static/font/duke/duke_fill-webfont.svg#duke_fillfill') format('svg');
@@ -14,8 +14,8 @@
 
 @font-face {
   font-family: 'Duke Shadow';
-  src: url('/static/font/duke/duke_shadow-webfont.eot');
-  src: url('/static/font/duke/duke_shadow-webfont.eot?#iefix') format('embedded-opentype'),
+  src: url('/static/font/duke/duke_shadow-webfont.eot') format('eot'),
+     url('/static/font/duke/duke_shadow-webfont.eot?#iefix') format('embedded-opentype'),
      url('/static/font/duke/duke_shadow-webfont.woff') format('woff'),
      url('/static/font/duke/duke_shadow-webfont.ttf') format('truetype'),
      url('/static/font/duke/duke_shadow-webfont.svg#duke_shadowshadow') format('svg');
@@ -25,8 +25,8 @@
 
 @font-face {
   font-family: 'Duke Regular';
-  src: url('/static/font/duke/duke-webfont.eot');
-  src: url('/static/font/duke/duke-webfont.eot?#iefix') format('embedded-opentype'),
+  src: url('/static/font/duke/duke-webfont.eot') format('eot'),
+     url('/static/font/duke/duke-webfont.eot?#iefix') format('embedded-opentype'),
      url('/static/font/duke/duke-webfont.woff') format('woff'),
      url('/static/font/duke/duke-webfont.ttf') format('truetype'),
      url('/static/font/duke/duke-webfont.svg#duke_regularregular') format('svg');
