@@ -62,8 +62,8 @@ a:hover {
     overflow: hidden; }
     #steps-box #steps .step {
       float: left;
-      width: 30%;
-      margin-right: 3.33%; }
+      width: 31%;
+      margin-right: 3.5%; }
       #steps-box #steps .step:last-child {
         margin-right: 0; }
       #steps-box #steps .step h3 {
@@ -77,6 +77,8 @@ a:hover {
         font-size: 20px; }
   #steps-box #more-info-box {
     margin-top: 30px; }
+    #steps-box #more-info-box span {
+      font-size: 80%; }
     #steps-box #more-info-box a {
       color: #efc85d; }
 

@@ -126,6 +126,10 @@ a:hover {
   #more-info-box {
     margin-top: 30px;
 
+    span {
+      font-size: 80%;
+    }
+
     a {
       color: $yellow;
     }
