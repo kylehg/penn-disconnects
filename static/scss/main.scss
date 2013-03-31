@@ -133,20 +133,14 @@ a:hover {
 }
 
 #about {
-/*  height: 0;*/
   display: none;
   background-color: beige;
   position: relative;
   -webkit-transition: none;
 
-/*  &.on div {
-    visibility: visible;
-  }*/
-
   div {
     height: 100%;
     padding: 20px;
-    visibility: hidden;
     max-width: 700px;
     margin: 0 auto;
   }
