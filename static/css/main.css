@@ -22,7 +22,7 @@ a:hover {
     width: 70%; }
 
 #info {
-  background: url("/static/img/college-green.jpg") no-repeat center center fixed;
+  background: url("/static/img/college-green.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -194,9 +194,18 @@ a:hover {
   position: relative;
   top: 5px; }
 
-/*
-@media all and (max-width: 600px) {
-  .step {
+@media (max-width: 600px) {
+  #date-box h2, #date-box p {
+    width: 100%; }
+
+  #steps-box #steps .step {
     float: none;
-  }
-}*/
+    width: 70%;
+    margin: 0 auto; }
+    #steps-box #steps .step:last-child {
+      margin-right: auto; }
+
+  #pledge form h2 {
+    font-size: 50px; }
+  #pledge form p, #pledge form input[type="text"], #pledge form input[type="email"] {
+    font-size: 16px; } }
