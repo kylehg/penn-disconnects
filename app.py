@@ -95,13 +95,22 @@ def send_emails(data):
     sg.smtp.send(us_msg)
 
 
-@app.route('/dump')
-def dump():
-    """See all the signups."""
-    signups = db.signups.find()
+def dump_signups(signups):
     return '<br/>'.join([','.join(str(v) for v in signup.values())
                          for signup in signups])
 
+
+@app.route('/dump')
+def dump():
+    """See all the signups."""
+    return dump_signups(db.signups.find())
+
+
+@app.route('/leaders')
+def leaders():
+    """See all the leaders."""
+    return dump_signups(db.signups.find({'is_interested': True}))
+    
 
 
 if __name__ == '__main__':
