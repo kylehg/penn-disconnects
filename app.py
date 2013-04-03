@@ -96,8 +96,10 @@ def send_emails(data):
 
 
 def dump_signups(signups):
-    return '<br/>'.join([','.join(str(v) for v in signup.values())
-                         for signup in signups])
+    return 'Count: %s<br/>%s' % (
+        signups.count(),
+        '<br/>'.join([','.join(str(v) for v in signup.values())
+                      for signup in signups]))
 
 
 @app.route('/dump')
