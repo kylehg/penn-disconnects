@@ -35,6 +35,10 @@ a:hover {
   border-bottom-style: dotted;
 }
 
+em {
+  font-style: italic;
+}
+
 #header {
   padding: 50px 30px;
   background-color: $logo-gray;
@@ -71,6 +75,12 @@ a:hover {
     font-family: $header-font-family;
     font-size: 72px;
     color: $pinkish;
+
+    a {
+      &:hover {
+        border: none;
+      }
+    }
   }
   p {
     border-bottom: $dot-border;
@@ -296,6 +306,20 @@ a:hover {
   #twitter-opt {
     position: relative;
     top: 5px;
+  }
+}
+
+.popup_cont {
+  margin: 0 20px;
+  p {
+    text-transform: none !important;
+    a {
+      color: $tealey;
+      border-bottom: 1px dotted $tealey;
+      &:hover {
+        border-style: solid;
+      }
+    }
   }
 }
 

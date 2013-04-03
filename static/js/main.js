@@ -10,6 +10,13 @@
     $('#interest-form input').on('keyup', pdc.formCheck);
     $('#tell-me-more a').on('click', pdc.interestSubmit);
     $('#more-info-box a').on('click', pdc.expandInfo);
+    $('#date a').popup({
+                         content: $('.popup420'),
+//                         contentClass: 'popup420-pu',
+//                         width: '60',
+//                         widthParam: '70%',
+//                         width: 'auto',
+                       });
     return pdc.formCheck();
   };
 

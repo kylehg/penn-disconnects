@@ -13,6 +13,7 @@
 
 <link rel="stylesheet" href="/static/css/reset.css">
 <link rel="stylesheet" href="/static/css/main.css">
+<link rel="stylesheet" href="/static/css/popup.css">
 
 </head>
 
@@ -27,7 +28,7 @@
 
   <section id="info">
     <div id="date-box">
-      <h2 id="date">Saturday April&nbsp;20</h2>
+      <h2 id="date"><a title="Yes, we know it's 4/20..." href="#popup420">Saturday April&nbsp;20</a></h2>
       <p id="tagline">
         <span>A day to connect with friends and </span>
         <span>disconnect from technology.</span>
@@ -113,6 +114,20 @@
     <p>An <a href="https://twitter.com/aarowilso">@aarowilso</a>, <a href="https://twitter.com/elankiderman">@elankiderman</a>, <a href="https://twitter.com/joycekim77">@joycekim77</a>, <a href="https://twitter.com/KelseyMatevish">@kelseymatevish</a>, and <a href="https://twitter.com/kylehardgrave">@kylehardgrave</a> production.</p>
   </footer><!--/footer-->
 </div><!--/main-->
+<style>
+#popup420 p {
+width: 70%;
+}
+</style>
+<div id="popup420" style="display: none">
+<p>You might be skeptical that we can enjoy <em>both</em> a day of
+    disconnecting from technology <em>and</em> a celebration of our favorite
+    <a target="_blank" href="http://www.urbandictionary.com/define.php?term=420">leafey
+      green</a> on 4/20. But we think that there’s no better way to alter
+    our collective consciousness than with a bunch of friends, technology
+    free. So read on, and we hope you’ll join us.</p>
+</p>
+</div>
 
 
 
@@ -122,6 +137,7 @@
 <script>
     window.jQuery || document.write('<script src="/static/js/jquery-1.9.1.min.js"><\/script>');
 </script>
+<script src="/static/js/jquery.popup.min.js"></script>
 <script src="/static/js/main.js"></script>
 
 

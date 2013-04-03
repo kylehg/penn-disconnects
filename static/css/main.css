@@ -14,6 +14,9 @@ a:hover {
   border-bottom-width: 1px;
   border-bottom-style: dotted; }
 
+em {
+  font-style: italic; }
+
 #header {
   padding: 50px 30px;
   background-color: #e6ebef; }
@@ -41,6 +44,8 @@ a:hover {
     font-family: "Duke Regular", Helvetica, Arial, sans-serif;
     font-size: 72px;
     color: #cb6c8c; }
+    #date-box h2 a:hover {
+      border: none; }
   #date-box p {
     border-bottom: 3px dotted #32505a;
     padding: 10px 5px 15px;
@@ -193,6 +198,16 @@ a:hover {
 #social #twitter-opt {
   position: relative;
   top: 5px; }
+
+.popup_cont {
+  margin: 0 20px; }
+  .popup_cont p {
+    text-transform: none !important; }
+    .popup_cont p a {
+      color: #32505a;
+      border-bottom: 1px dotted #32505a; }
+      .popup_cont p a:hover {
+        border-style: solid; }
 
 @media (max-width: 600px) {
   #date-box h2, #date-box p {
