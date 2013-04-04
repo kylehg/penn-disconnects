@@ -8,11 +8,12 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none; }
-
-a:hover {
+  text-decoration: none;
   border-bottom-width: 1px;
   border-bottom-style: dotted; }
+
+a:hover {
+  border-bottom: none; }
 
 em {
   font-style: italic; }
@@ -44,7 +45,7 @@ em {
     font-family: "Duke Regular", Helvetica, Arial, sans-serif;
     font-size: 72px;
     color: #cb6c8c; }
-    #date-box h2 a:hover {
+    #date-box h2 a {
       border: none; }
   #date-box p {
     border-bottom: 3px dotted #32505a;
