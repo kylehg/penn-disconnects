@@ -19,13 +19,13 @@ if MONGO_URL:
     connection = Connection(MONGO_URL) # Get a connection
     db = connection[urlparse(MONGO_URL).path[1:]] # Get the database
     DEBUG = False
-    EMAIL = 'kylehardgrave+pdc@gmail.com'
+    EMAIL = 'penndisconnects@gmail.com'
 else:
     # Not on an app with the MongoHQ add-on, do some localhost action
     connection = Connection('localhost', 27017)
     db = connection['disconnects']
     DEBUG = True
-    EMAIL = 'penndisconnects@gmail.com'
+    EMAIL = 'kylehardgrave+pdc@gmail.com'
 
 BYLINE = (EMAIL, NAME)
 
