@@ -112,6 +112,11 @@ def dump():
 def leaders():
     """See all the leaders."""
     return dump_signups(db.signups.find({'is_interested': True}))
+
+
+@app.route('/emails')
+def emails():
+    return '<br/>'.join([signup['email'] for signup in db.signups.find()])
     
 
 
